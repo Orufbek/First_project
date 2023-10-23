@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update User</title>
+</head>
+<body>
+<h1>Edit user Info</h1>
+
+<form action="{% url 'edit_user_url' user.id %}" method="post" >
+    {% csrf_token %}
+    <input type="text" name="username" value="{{ user.username }}" required >
+    <input type="email" name="email" value="{{ user.email }}"  >
+    <input type="text" name="first_name" value="{{ user.first_name }}" >
+    <input type="text" name="last_name" value="{{ user.last_name }}">
+    <input type="text" name="phone_number" value="{{ user.phone_number }}"  >
+    <input type="text" name="bio" value="{{ user.bio }}"  >
+    <input type="password" name="password" placeholder="enter password"  >
+    <input type="password" name="confirm_password" placeholder="again passwowr">
+    <button type="submit">Saqlash </button>
+</form>
+</body>
+</html>
